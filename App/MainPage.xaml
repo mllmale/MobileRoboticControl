@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.MainPage">
+
+    <Grid>
+        <!-- Fundo preto representando a câmera (ainda sem exibição real) -->
+        <Frame x:Name="CameraFrame"
+               BackgroundColor="Black"
+               VerticalOptions="FillAndExpand"
+               HorizontalOptions="FillAndExpand">
+        </Frame>
+
+        <!-- Controles de movimento -->
+        <Grid Padding="20" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Image Source="up.png" Opacity="0.5" WidthRequest="60" HeightRequest="60"
+                   VerticalOptions="Start" HorizontalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding UpCommand}" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Image Source="left.png" Opacity="0.5" WidthRequest="60" HeightRequest="60"
+                   VerticalOptions="Center" HorizontalOptions="Start">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding LeftCommand}" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Image Source="right.png" Opacity="0.5" WidthRequest="60" HeightRequest="60"
+                   VerticalOptions="Center" HorizontalOptions="End">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RightCommand}" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Image Source="down.png" Opacity="0.5" WidthRequest="60" HeightRequest="60"
+                   VerticalOptions="End" HorizontalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding DownCommand}" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <!-- Botões adicionais -->
+            <Image Source="u.png" Opacity="0.5" WidthRequest="60" HeightRequest="60"
+                   VerticalOptions="Center" HorizontalOptions="End"
+                   Margin="20,0,20,100">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding UCommand}" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Image Source="d.png" Opacity="0.5" WidthRequest="60" HeightRequest="60"
+                   VerticalOptions="Center" HorizontalOptions="End"
+                   Margin="20,0,20,40">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding DCommand}" />
+                </Image.GestureRecognizers>
+            </Image>
+        </Grid>
+
+        <!-- Botão de menu -->
+        <Image Source="menu.png" Opacity="0.7" WidthRequest="40" HeightRequest="40"
+               VerticalOptions="Start" HorizontalOptions="End" Margin="10">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding OpenMenuCommand}" />
+            </Image.GestureRecognizers>
+        </Image>
+    </Grid>
+</ContentPage>
